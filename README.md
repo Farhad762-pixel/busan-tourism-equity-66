@@ -137,3 +137,29 @@ Available endpoints:
 For a demonstration, use **Try it out** with `query=sea cafe photography`,
 `limit=10`, and `equity_weight=0.20`. The baseline returns 10 results; the prototype
 returns 9 because only nine attractions have positive relevance to this query.
+
+<!-- PROGRESS_START -->
+
+## Current Research Progress
+
+**Status: RQ1 complete; recommendation-exposure experiment in progress.**
+
+Validated research data now include:
+
+- 16 Busan districts
+- January 2022 – December 2025
+- 768 district-month observations
+- Foreign visitor activity
+- Foreign tourist credit-card spending
+- 207 official Busan attractions
+- 0 missing visitor/spending values in the final master panel
+
+Preliminary analysis shows that visitor activity and tourism spending are related but spatially distributed differently. Haeundae-gu and Busanjin-gu, in particular, capture substantially larger shares of foreign-tourist spending.
+
+Initial lower-benefit screening identifies Yeongdo-gu, Seo-gu, Geumjeong-gu, Nam-gu, and Dong-gu as candidates for the equity-aware recommendation experiment.
+
+See [`docs/professor_progress.md`](docs/professor_progress.md) for the current research summary and preliminary results.
+
+**Next:** measure baseline recommendation exposure and compare it with the economic-equity-aware re-ranking model.
+
+<!-- PROGRESS_END -->
