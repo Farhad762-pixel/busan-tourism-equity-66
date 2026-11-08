@@ -1,0 +1,12 @@
+metric,value
+pooled_pearson,0.5726
+pooled_spearman,0.7242
+share_pearson,0.4531
+share_spearman,0.6197
+average_monthly_pearson,0.4457
+average_monthly_spearman,0.5989
+top_visitor_district,Gangseo-gu
+top_visitor_share,0.1724
+top_spending_district,Haeundae-gu
+top_spending_share,0.2989
+lower_benefit_candidates,5
