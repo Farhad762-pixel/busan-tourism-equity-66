@@ -97,3 +97,43 @@ of tourism visibility.
 Unless real transaction data from an intervention are available, the study
 will not claim that increased recommendation exposure directly causes higher
 business revenue.
+
+## Professor-Ready MVP
+
+This FastAPI MVP uses the real **207 Busan attractions** in
+`data/processed/busan_attractions.csv`, reading the existing data without modifying it.
+Baseline recommendations use TF-IDF and cosine similarity across attraction
+titles, subtitles, places, districts, addresses, and transport information.
+
+The equity-aware model is currently a prototype. Its equity score uses attraction
+distribution only: districts with fewer attractions in this dataset receive a
+higher normalized score, labeled `prototype_attraction_distribution_proxy`.
+This proxy measures dataset representation, not real economic inequality.
+Future research will replace it with real foreign-tourist spending, visitor
+activity, algorithmic visibility, and accessibility data.
+
+The prototype re-ranks only positive-relevance attractions within the baseline's
+top 50, using `final_score = (1 - equity_weight) * relevance_score + equity_weight * equity_score`.
+It may return fewer results than requested when there are insufficient positive
+matches. The default limit is 10 and the default equity weight is 0.20.
+
+From the repository root, install dependencies and start the server:
+
+```bash
+python -m pip install -r requirements.txt
+python -m uvicorn src.api.main:app --reload
+```
+
+Open Swagger UI at <http://127.0.0.1:8000/docs>.
+
+Available endpoints:
+
+- `GET /api/health` — application health.
+- `GET /api/attractions` — all 207 attractions; optional `district` filter.
+- `GET /api/recommend/baseline` — `query` and optional `limit`.
+- `GET /api/recommend/equity` — `query`, optional `limit`, and `equity_weight` (0–1).
+- `GET /api/compare` — the same inputs, both recommendation lists, and their unique district counts.
+
+For a demonstration, use **Try it out** with `query=sea cafe photography`,
+`limit=10`, and `equity_weight=0.20`. The baseline returns 10 results; the prototype
+returns 9 because only nine attractions have positive relevance to this query.
