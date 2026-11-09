@@ -1,165 +1,102 @@
-# busan-tourism-equity-66
-Business Analytics research on algorithmic tourism visibility and foreign-tourist spending concentration in Busan.
-# Algorithmic Visibility and Tourism Spending Inequality in Busan
+# Busan Tourism Economic-Equity Recommender
 
-## Working Title
+## From Algorithmic Visibility to Local Economic Opportunity
 
-**Algorithmic Visibility and Tourism Spending Inequality:
-An Economic-Equity-Aware Recommendation Framework for Busan**
+**Research project:** An Economic-Equity-Aware Tourism Recommendation Framework for Busan
 
-## Main Research Question
+This repository studies whether digital tourism recommendation exposure aligns with existing foreign-tourist activity and spending concentration across Busan, and whether a relevance-preserving re-ranking system can broaden visibility toward economically under-capturing districts.
 
-Do tourism recommendation systems disproportionately recommend Busan areas
-that already capture high levels of foreign-tourist activity and spending,
-and can an economic-equity-aware re-ranking system broaden exposure to
-suitable lower-benefit areas without substantially reducing recommendation
-relevance or travel convenience?
+## Research questions
 
-## Research Problem
+1. **RQ1:** How geographically concentrated are foreign-tourist visits and spending across Busan?
+2. **RQ2:** To what extent does baseline recommendation exposure correspond to existing visitor and spending concentration?
+3. **RQ3:** Can an economic-equity-aware re-ranking model broaden exposure to suitable lower-benefit areas without substantially reducing recommendation relevance?
 
-International tourism in Busan is increasing rapidly, but tourism activity
-and foreign-tourist spending may remain concentrated in a limited number
-of major destinations and commercial areas.
-
-Digital tourism recommendation systems may also favor already-popular
-destinations because those places have more reviews, searches, visits,
-online content, and historical interaction data.
-
-This may create a feedback loop:
-
-Popularity
-→ More digital visibility
-→ More recommendations
-→ More tourists
-→ More spending
-→ More popularity
-
-At the same time, other high-quality and accessible tourism areas may
-receive much less recommendation exposure and lower tourism-related
-economic benefits.
-
-This research investigates whether recommendation exposure corresponds
-with existing tourism activity and spending concentration in Busan.
-
-It will then test whether an economic-equity-aware re-ranking system can
-broaden exposure to suitable lower-benefit areas while preserving
-recommendation relevance and travel convenience.
-
-## Research Questions
-
-### RQ1
-How geographically concentrated are foreign-tourist visits and spending
-across Busan?
-
-### RQ2
-To what extent does tourism recommendation exposure correspond to existing
-foreign-tourist activity and spending concentration?
-
-### RQ3
-Can an economic-equity-aware re-ranking model broaden exposure to suitable
-lower-benefit areas without substantially reducing recommendation relevance
-or travel convenience?
-
-## Planned Data
-
-1. Foreign-tourist spending by Busan district
-2. Foreign visitor activity by Busan district
-3. Busan tourism attractions / POIs
-4. Restaurants and tourism-related local businesses
-5. Tourism recommendation outputs
-6. Geographic coordinates and accessibility information
-7. Tourist preference / behavior data if publicly available
-
-## Planned Analysis
-
-1. Measure foreign-tourist spending concentration
-2. Measure foreign visitor concentration
-3. Measure recommendation exposure
-4. Compare recommendation exposure with spending and visitor concentration
-5. Build a baseline tourism recommendation model
-6. Build an economic-equity-aware re-ranking model
-7. Compare both models
-
-## Main Evaluation Metrics
-
-- Recommendation relevance
-- Geographic coverage
-- Recommendation exposure concentration
-- Foreign-tourist spending concentration
-- Travel distance / convenience
-- Exposure of lower-benefit tourism areas
-
-## Important Research Limitation
-
-The study will measure recommendation exposure and potential redistribution
-of tourism visibility.
-
-Unless real transaction data from an intervention are available, the study
-will not claim that increased recommendation exposure directly causes higher
-business revenue.
-
-## Professor-Ready MVP
-
-This FastAPI MVP uses the real **207 Busan attractions** in
-`data/processed/busan_attractions.csv`, reading the existing data without modifying it.
-Baseline recommendations use TF-IDF and cosine similarity across attraction
-titles, subtitles, places, districts, addresses, and transport information.
-
-The equity-aware model is currently a prototype. Its equity score uses attraction
-distribution only: districts with fewer attractions in this dataset receive a
-higher normalized score, labeled `prototype_attraction_distribution_proxy`.
-This proxy measures dataset representation, not real economic inequality.
-Future research will replace it with real foreign-tourist spending, visitor
-activity, algorithmic visibility, and accessibility data.
-
-The prototype re-ranks only positive-relevance attractions within the baseline's
-top 50, using `final_score = (1 - equity_weight) * relevance_score + equity_weight * equity_score`.
-It may return fewer results than requested when there are insufficient positive
-matches. The default limit is 10 and the default equity weight is 0.20.
-
-From the repository root, install dependencies and start the server:
-
-```bash
-python -m pip install -r requirements.txt
-python -m uvicorn src.api.main:app --reload
-```
-
-Open Swagger UI at <http://127.0.0.1:8000/docs>.
-
-Available endpoints:
-
-- `GET /api/health` — application health.
-- `GET /api/attractions` — all 207 attractions; optional `district` filter.
-- `GET /api/recommend/baseline` — `query` and optional `limit`.
-- `GET /api/recommend/equity` — `query`, optional `limit`, and `equity_weight` (0–1).
-- `GET /api/compare` — the same inputs, both recommendation lists, and their unique district counts.
-
-For a demonstration, use **Try it out** with `query=sea cafe photography`,
-`limit=10`, and `equity_weight=0.20`. The baseline returns 10 results; the prototype
-returns 9 because only nine attractions have positive relevance to this query.
-
-<!-- PROGRESS_START -->
-
-## Current Research Progress
-
-**Status: RQ1 complete; recommendation-exposure experiment in progress.**
-
-Validated research data now include:
+## Data checkpoint
 
 - 16 Busan districts
-- January 2022 – December 2025
+- January 2022–December 2025
 - 768 district-month observations
 - Foreign visitor activity
 - Foreign tourist credit-card spending
 - 207 official Busan attractions
-- 0 missing visitor/spending values in the final master panel
+- Primary policy period: 2024–2025
+- Full 2022–2025 period retained for robustness
 
-Preliminary analysis shows that visitor activity and tourism spending are related but spatially distributed differently. Haeundae-gu and Busanjin-gu, in particular, capture substantially larger shares of foreign-tourist spending.
+Raw authenticated Tourism Data Lab downloads are intentionally excluded from the repository. Processed research outputs and reproducible summary tables are included.
 
-Initial lower-benefit screening identifies Yeongdo-gu, Seo-gu, Geumjeong-gu, Nam-gu, and Dong-gu as candidates for the equity-aware recommendation experiment.
+## Main findings
 
-See [`docs/professor_progress.md`](docs/professor_progress.md) for the current research summary and preliminary results.
+### RQ1 — tourism activity and spending are not distributed identically
 
-**Next:** measure baseline recommendation exposure and compare it with the economic-equity-aware re-ranking model.
+Visitor activity and spending are positively associated, but several districts capture very different shares of tourism spending relative to visitor activity. The primary economic signal is:
 
-<!-- PROGRESS_END -->
+`Economic Under-Capture = max(0, 1 - Spending Share / Visitor Share)`
+
+**Yeongdo-gu and Seo-gu** were the most sensitivity-robust economic-opportunity districts.
+
+### RQ2 — baseline algorithmic visibility is uneven
+
+Using 48 controlled tourist-intent queries across 12 categories (33 passed the primary quality rule):
+
+- Baseline exposure HHI: **0.0834**
+- Exposure Gini: **0.3263**
+- Top-3 district exposure: **35.3%**
+- Exposure vs spending: Pearson **0.4566**, Spearman **0.4353**
+- Exposure vs economic under-capture: Pearson **-0.3975**, Spearman **-0.2956**
+
+These are descriptive associations, not causal estimates.
+
+### RQ3 — economic-equity re-ranking works with minimal relevance loss
+
+Final intervention:
+
+`Final Score = Relevance × (1 + λ × Economic Under-Capture)`
+
+| Policy | λ | Relevance retained | Under-capture exposure gain | Yeongdo + Seo-gu gain |
+|---|---:|---:|---:|---:|
+| Baseline | 0.00 | 100% | 0 pp | 0 pp |
+| Conservative | **0.80** | **99.06%** | **+13.74 pp** | **+5.44 pp** |
+| Balanced | 1.00 | 98.62% | +15.13 pp | +5.84 pp |
+| Strong redistribution | 2.00 | 95.68% | +20.60 pp | +8.74 pp |
+
+The **primary policy setting is λ = 0.80**, selected under a strict 99% relevance-retention rule.
+
+## Robustness
+
+The main result survives:
+
+- 2024–2025 vs 2022–2025 temporal comparison
+- alternative opportunity-score specifications
+- **12/12** tourist-intent categories
+- **12/12** leave-one-category-out tests
+- bootstrap uncertainty analysis
+- four economic signals: ratio, share gap, log ratio, and rank based
+
+## Professor-ready documents
+
+- [`docs/professor_results_summary.md`](docs/professor_results_summary.md)
+- [`docs/rq1_statistical_analysis.md`](docs/rq1_statistical_analysis.md)
+- [`docs/rq2_baseline_exposure_audit.md`](docs/rq2_baseline_exposure_audit.md)
+- [`docs/rq3_equity_tradeoff_analysis.md`](docs/rq3_equity_tradeoff_analysis.md)
+- [`docs/teos_methodology.md`](docs/teos_methodology.md)
+
+## Current FastAPI prototype
+
+The repository already contains a working FastAPI recommender using the 207 official attractions. The **current API equity endpoint still uses the earlier attraction-distribution prototype proxy**. The next implementation step is to replace that API proxy with the validated economic under-capture model and expose policy scenarios (λ = 0, 0.80, 1.00, 2.00).
+
+Start the current API from the repository root:
+
+```bash
+python -m pip install fastapi uvicorn scikit-learn
+python -m uvicorn src.api.main:app --reload
+```
+
+Swagger UI: <http://127.0.0.1:8000/docs>
+
+## Important limitations
+
+- This is a controlled research recommender, not an audit of a commercial platform.
+- The study does not claim recommendation systems caused observed tourism-spending inequality.
+- Increased recommendation exposure is **potential visibility**, not proven revenue impact.
+- Accessibility / travel-time constraints are the next major implementation extension.
