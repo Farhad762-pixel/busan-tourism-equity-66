@@ -46,6 +46,10 @@ def main():
     fig.suptitle("Archived RQ3 summary — arithmetic checked; full rerun pending")
     fig.savefig(OUT / "archived_policy_summary.svg", metadata={"Date": None})
     plt.close(fig)
+    # Matplotlib emits trailing spaces in SVG paths; keep generated diffs clean.
+    for name in ("attraction_distribution.svg", "archived_policy_summary.svg"):
+        path = OUT / name
+        path.write_text("\n".join(line.rstrip() for line in path.read_text().splitlines())+"\n", encoding="utf-8")
     print(f"Wrote figures to {OUT}")
 
 

@@ -215,7 +215,7 @@ def main():
         names = subprocess.check_output(["git", "ls-tree", "-rz", "--name-only", revision], cwd=ROOT).decode().split("\0")
         args.manifest_output.parent.mkdir(parents=True, exist_ok=True)
         with args.manifest_output.open("w", encoding="utf-8", newline="") as handle:
-            writer = csv.DictWriter(handle, fieldnames=["revision", "path", "bytes", "sha256"])
+            writer = csv.DictWriter(handle, fieldnames=["revision", "path", "bytes", "sha256"], lineterminator="\n")
             writer.writeheader()
             for name in filter(None, names):
                 content = subprocess.check_output(["git", "show", f"{revision}:{name}"], cwd=ROOT)
