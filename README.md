@@ -1,106 +1,192 @@
-# Busan Tourism Economic-Equity Recommender
+# Busan Tourism Equity Research
 
-> **Research portfolio — start here:** [Research index](RESEARCH_START_HERE.md) · [Validated methods](docs/research/METHODS_AND_METRICS.md) · [Verified results](docs/research/VERIFIED_RESULTS.md) · [Official sources and reuse notes](docs/research/SOURCES_AND_REUSE.md) · [What remains to sync](docs/research/REPRODUCIBILITY_STATUS.md)
->
-> **Status (November 2026):** Offline economic-equity and preliminary straight-line-distance experiments are documented. Commercial-platform impacts, real travel times and human-rated satisfaction have **not** been verified. Full third-party datasets are withheld from this public organization update pending redistribution review.
+**Algorithmic Visibility and Tourism Spending Inequality: An Economic-Equity-Aware Tourism Recommendation Framework for Busan**
 
-## From Algorithmic Visibility to Local Economic Opportunity
+Can a tourism recommender broaden visibility toward districts that capture a
+smaller share of foreign-tourist spending while preserving relevance and travel
+convenience? This research combines a working attraction-search MVP with
+previously reported offline economic-equity experiments.
 
-**Research project:** An Economic-Equity-Aware Tourism Recommendation Framework for Busan
+**Current evidence status:** the 207-attraction API is reproducible from this
+repository. Published economic results are archived summaries whose arithmetic
+has been checked; the 768-row panel, combined research JSON, original benchmark,
+and experiment scripts are not in this checkout. The full economic and distance
+studies have **not** been independently rerun here.
 
-This repository studies whether digital tourism recommendation exposure aligns with existing foreign-tourist activity and spending concentration across Busan, and whether a relevance-preserving re-ranking system can broaden visibility toward economically under-capturing districts.
+[Audit and inventory](docs/research/AUDIT_2026-11-13.md) ·
+[Data dictionary](docs/data_sources/DATA_DICTIONARY.md) ·
+[Reproduction guide](docs/research/REPRODUCE.md) ·
+[Sources and reuse](docs/research/SOURCES_AND_REUSE.md) ·
+[Paper and professor documents](manuscript/README.md)
 
-## Research questions
+## Research questions and contribution
 
-1. **RQ1:** How geographically concentrated are foreign-tourist visits and spending across Busan?
-2. **RQ2:** To what extent does baseline recommendation exposure correspond to existing visitor and spending concentration?
-3. **RQ3:** Can an economic-equity-aware re-ranking model broaden exposure to suitable lower-benefit areas without substantially reducing recommendation relevance?
+1. **RQ1:** How concentrated are foreign visitor activity and foreign-card tourism spending across Busan districts?
+2. **RQ2:** How does a controlled text recommender distribute exposure, and how does that exposure relate to visitor/spending shares?
+3. **RQ3:** Can economic-undercapture re-ranking change simulated exposure while retaining text relevance and reasonable accessibility?
 
-## Data checkpoint
+The proposed contribution is a transparent framework for comparing relevance,
+district visibility and economic-undercapture signals. It is not a claim that
+commercial platforms caused inequality, or that simulated exposure increased
+actual visits, local revenue or tourist satisfaction.
 
-- 16 Busan districts
-- January 2022–December 2025
-- 768 district-month observations
-- Foreign visitor activity
-- Foreign tourist credit-card spending
-- 207 official Busan attractions
-- Primary policy period: 2024–2025
-- Full 2022–2025 period retained for robustness
+## Data and provenance
 
-Raw authenticated Tourism Data Lab downloads are intentionally excluded from the repository. Processed research outputs and reproducible summary tables are included.
+| Material | Available in this repository | Verification |
+|---|---|---|
+| Official Busan attractions | 207-row CSV; full 207-item and partial 10-item API JSON | 207 unique IDs, 16 districts, coordinates, exact raw-to-CSV projection checked |
+| District-month panel, 2022–2025 | Reported as 768 rows; **not available here** | Complete dates, missingness, joins and CSV/JSON consistency remain unverified |
+| Historical Data Lab exports | 16 Haeundae files and two city-total files | Inventoried; not a substitute for the 16-district panel |
+| Economic experiment outputs | Small archived CSV summary tables | Arithmetic and aggregate exposure concentration checked |
+| Literature/manuscript | Markdown reports; empty reference template | Original article draft and verified literature still needed |
 
-## Main findings
+Sources are [Korea Tourism Data Lab](https://datalab.visitkorea.or.kr/datalab/portal/main/getMainForm.do)
+and the [Busan Attractions Information Service](https://www.data.go.kr/data/15063481/openapi.do).
+The attraction cleaner maps raw fields and removes exact duplicate full records;
+no raw data are edited or missing text imputed. The current CSV has 207 records
+and no duplicate IDs. Optional text gaps are documented in the dictionary.
 
-### RQ1 — tourism activity and spending are not distributed identically
+**Data warning:** `data/raw/foreign_spending_raw.csv` is identical to the visitor
+file and contains visitor counts, not spending. Both have only Busan city totals
+for October 2025–September 2026. They must not be used as the research panel.
+Haeundae total-consumption headers use million KRW; industry data use thousand
+KRW. Original foreign-card filter settings need confirmation.
 
-Visitor activity and spending are positively associated, but several districts capture very different shares of tourism spending relative to visitor activity. The primary economic signal is:
+No new source datasets are published in this update. Existing files are
+preserved; their presence in Git does not establish reuse rights. New raw data,
+private panels, combined JSON and credentials are ignored pending review.
 
-`Economic Under-Capture = max(0, 1 - Spending Share / Visitor Share)`
+## Two distinct recommendation models
 
-**Yeongdo-gu and Seo-gu** were the most sensitivity-robust economic-opportunity districts.
+### Working API prototype
 
-### RQ2 — baseline algorithmic visibility is uneven
+The baseline indexes `main_title`, `subtitle`, `place`, `district`, `address`
+and `transport_info` using TF-IDF with English stop-word filtering and cosine
+similarity. The corpus contains mixed-language metadata; English query matches
+are limited by that content. Ties preserve original CSV order.
 
-Using 48 controlled tourist-intent queries across 12 categories (33 passed the primary quality rule):
+The current equity endpoint uses **`prototype_attraction_distribution_proxy`**:
 
-- Baseline exposure HHI: **0.0834**
-- Exposure Gini: **0.3263**
-- Top-3 district exposure: **35.3%**
-- Exposure vs spending: Pearson **0.4566**, Spearman **0.4353**
-- Exposure vs economic under-capture: Pearson **-0.3975**, Spearman **-0.2956**
+```text
+equity_score = (maximum district attraction count - district attraction count)
+               / (maximum count - minimum count)
+final_score = (1 - equity_weight) * relevance_score + equity_weight * equity_score
+```
 
-These are descriptive associations, not causal estimates.
+This is a dataset-representation proxy, not economic inequality. Only
+positive-relevance attractions within the baseline's top 50 are re-ranked;
+results may be fewer than the requested limit. All five endpoints are preserved.
 
-### RQ3 — economic-equity re-ranking works with minimal relevance loss
+### Reported offline economic study
 
-Final intervention:
+The documented research model uses 2024–2025 visitor and spending aggregates:
 
-`Final Score = Relevance × (1 + λ × Economic Under-Capture)`
+```text
+benefit_capture_ratio = spending_share / visitor_share
+economic_undercapture = max(0, 1 - benefit_capture_ratio)
+final_score = relevance * (1 + lambda * economic_undercapture)
+```
 
-| Policy | λ | Relevance retained | Under-capture exposure gain | Yeongdo + Seo-gu gain |
-|---|---:|---:|---:|---:|
-| Baseline | 0.00 | 100% | 0 pp | 0 pp |
-| Conservative | **0.80** | **99.06%** | **+13.74 pp** | **+5.44 pp** |
-| Balanced | 1.00 | 98.62% | +15.13 pp | +5.84 pp |
-| Strong redistribution | 2.00 | 95.68% | +20.60 pp | +8.74 pp |
+This multiplicative model is **not implemented by the current API equity
+endpoint**. Its lambda is not the API's equity_weight. The archived study reports
+48 queries across 12 categories, 33 eligible queries with at least five positive
+matches, top-10 lists from top-50 positive candidates, and rank weights
+`1/log2(rank+1)`. See [methods](docs/research/METHODS_AND_METRICS.md).
 
-The **primary policy setting is λ = 0.80**, selected under a strict 99% relevance-retention rule.
+## Archived findings and verification limits
 
-## Robustness
+The following values come from existing summary CSVs. Their arithmetic agrees;
+this does not establish that the original experiments were rerun.
 
-The main result survives:
+| Reported measure | Baseline | Economic policy, lambda=0.80 |
+|---|---:|---:|
+| Undercapture-district exposure | 56.41% | 70.14% |
+| TF-IDF relevance retained | 100% | 99.06% |
+| Yeongdo + Seo exposure | 15.95% | 21.38% |
+| District exposure Gini | 0.3263 | 0.2983 |
+| District exposure HHI (recomputed from saved shares) | 0.08337 | 0.08010 |
+| District coverage | 15/16 | 15/16 |
 
-- 2024–2025 vs 2022–2025 temporal comparison
-- alternative opportunity-score specifications
-- **12/12** tourist-intent categories
-- **12/12** leave-one-category-out tests
-- bootstrap uncertainty analysis
-- four economic signals: ratio, share gap, log ratio, and rank based
+The exposure gain is **13.74 percentage points**, not a measured spending gain.
+Reported RQ1 pooled visitor/spending correlations (Pearson 0.5726, Spearman
+0.7242) cannot be recomputed without the panel. Category, bootstrap and temporal
+robustness claims also await original inputs/scripts.
 
-## Professor-ready documents
+![Attraction counts checked against the repository snapshot](results/figures/attraction_distribution.svg)
 
-- [`docs/professor_results_summary.md`](docs/professor_results_summary.md)
-- [`docs/rq1_statistical_analysis.md`](docs/rq1_statistical_analysis.md)
-- [`docs/rq2_baseline_exposure_audit.md`](docs/rq2_baseline_exposure_audit.md)
-- [`docs/rq3_equity_tradeoff_analysis.md`](docs/rq3_equity_tradeoff_analysis.md)
-- [`docs/teos_methodology.md`](docs/teos_methodology.md)
+![Archived RQ3 policy summary; full rerun pending](results/figures/archived_policy_summary.svg)
 
-## Current FastAPI prototype
+Figures are newly rendered from existing counts and summary tables by
+`scripts/build_figures.py`; no original research figures were found locally.
+[Detailed checks](docs/research/AUDIT_2026-11-13.md) distinguish recalculation from
+full reproduction. Accessibility summaries use Haversine **straight-line**
+distance around three stations, not public-transport travel time. Their station
+coordinates and filtering code are missing.
 
-The repository already contains a working FastAPI recommender using the 207 official attractions. The **current API equity endpoint still uses the earlier attraction-distribution prototype proxy**. The next implementation step is to replace that API proxy with the validated economic under-capture model and expose policy scenarios (λ = 0, 0.80, 1.00, 2.00).
+## Professor-Ready MVP
 
-Start the current API from the repository root:
+Use Python 3.12. From the repository root:
 
 ```bash
-python -m pip install fastapi uvicorn scikit-learn
+python -m venv .venv
+source .venv/bin/activate
+python -m pip install -r requirements.txt
 python -m uvicorn src.api.main:app --reload
 ```
 
-Swagger UI: <http://127.0.0.1:8000/docs>
+Open <http://127.0.0.1:8000/docs> and use **Try it out**.
 
-## Important limitations
+| Endpoint | Inputs |
+|---|---|
+| `GET /api/health` | None |
+| `GET /api/attractions` | Optional `district` |
+| `GET /api/recommend/baseline` | Required `query`; `limit=10` |
+| `GET /api/recommend/equity` | Required `query`; `limit=10`; `equity_weight=0.20` (0–1) |
+| `GET /api/compare` | Same inputs; both lists and unique district counts |
 
-- This is a controlled research recommender, not an audit of a commercial platform.
-- The study does not claim recommendation systems caused observed tourism-spending inequality.
-- Increased recommendation exposure is **potential visibility**, not proven revenue impact.
-- Accessibility / travel-time constraints are the next major implementation extension.
+For `sea cafe photography`, limit 10, weight 0.20, the baseline returns **10**
+items and the prototype returns **9 positive-relevance items**; both cover seven
+districts. A zero-score baseline item is not evidence of a relevant match.
+See the [derived JSON example](results/reports/mvp_demo.json), which stores IDs
+and scores rather than republishing the source descriptions/images.
+
+Future research will replace the attraction-distribution prototype with verified
+foreign-tourist spending, visitor activity, algorithmic visibility and
+accessibility data. Newer Mac-only code must be inspected before integration.
+
+## Reproduce available checks
+
+```bash
+python -m pip install -r requirements-research.txt
+python -m unittest discover -s tests -v
+python scripts/verify_repository.py --output work/audit.json
+python scripts/run_mvp_experiment.py --output work/mvp_demo.json
+python scripts/build_figures.py
+```
+
+The validator is read-only. To rebuild the attraction projection safely, use
+`python src/clean_attractions.py --output work/attractions_rebuilt.csv` with a
+fresh filename. Existing outputs are never overwritten.
+
+The full economic experiment is blocked until private inputs and original
+scripts are recovered. Follow the [reproduction guide](docs/research/REPRODUCE.md)
+and [sync status](docs/research/REPRODUCIBILITY_STATUS.md); do not manufacture the
+missing benchmark or treat summary arithmetic as an independent rerun.
+
+## Repository map and paper preparation
+
+- `src/api/`: existing FastAPI prototype, unchanged in the audit.
+- `src/analysis/`: tested concentration and exposure metrics.
+- `scripts/`, `tests/`: read-only auditing, demonstration, figure creation and checks.
+- `data/`: existing files preserved in place; private additions ignored.
+- `experiments/`, `results/tables/`: existing archived summaries, unchanged.
+- `results/figures/`, `results/reports/`: explicitly labeled derived artifacts.
+- `docs/data_sources/`: dictionary and baseline manifest.
+- `docs/research/`: methods, evidence status, audit and synchronization plan.
+- `manuscript/README.md`: index to preserved professor reports and missing drafts.
+
+Next: recover the archive and verify permissions, reproduce all studies, obtain
+independent human relevance judgments, evaluate actual travel times, freeze a
+held-out multilingual benchmark, and verify literature citations with the
+professor. No observed revenue effect, causal intervention, commercial-platform
+audit or human-rated relevance has been established.

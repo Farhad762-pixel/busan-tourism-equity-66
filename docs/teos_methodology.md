@@ -1,3 +1,5 @@
+> **Evidence update (2026-11-13):** This document preserves previously reported research. The cloud audit checked available attraction data, API behavior and summary arithmetic; it did not rerun the economic or accessibility studies because their inputs/scripts are missing. See [audit](research/AUDIT_2026-11-13.md).
+
 # Economic Under-Capture and Opportunity Methodology
 
 ## Primary policy period

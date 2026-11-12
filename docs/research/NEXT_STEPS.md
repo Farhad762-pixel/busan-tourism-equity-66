@@ -1,6 +1,8 @@
+> See the [current audit](AUDIT_2026-11-13.md): the archive and newest Mac code are unavailable in this environment.
+
 # Research roadmap / remaining validation
 
-## Completed from the research archive
+## Previously reported as completed in the archive (not rerun here)
 
 - 16-district, 48-month tourism visitor and foreign-card-spending data validation.
 - 207-attraction official point-of-interest dataset.
