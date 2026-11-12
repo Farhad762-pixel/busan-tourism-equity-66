@@ -1,5 +1,9 @@
 # Busan Tourism Economic-Equity Recommender
 
+> **Research portfolio — start here:** [Research index](RESEARCH_START_HERE.md) · [Validated methods](docs/research/METHODS_AND_METRICS.md) · [Verified results](docs/research/VERIFIED_RESULTS.md) · [Official sources and reuse notes](docs/research/SOURCES_AND_REUSE.md) · [What remains to sync](docs/research/REPRODUCIBILITY_STATUS.md)
+>
+> **Status (November 2026):** Offline economic-equity and preliminary straight-line-distance experiments are documented. Commercial-platform impacts, real travel times and human-rated satisfaction have **not** been verified. Full third-party datasets are withheld from this public organization update pending redistribution review.
+
 ## From Algorithmic Visibility to Local Economic Opportunity
 
 **Research project:** An Economic-Equity-Aware Tourism Recommendation Framework for Busan
