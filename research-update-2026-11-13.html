@@ -1,0 +1,349 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Busan Tourism Equity — Research Progress</title>
+
+<style>
+:root {
+  --bg: #081326;
+  --card: #14233b;
+  --line: #2b405b;
+  --text: #eef5ff;
+  --muted: #afc0d4;
+  --accent: #69e5cf;
+  --blue: #79b8ff;
+}
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font-family: Arial, sans-serif;
+  line-height: 1.65;
+}
+header {
+  padding: 22px 7%;
+  border-bottom: 1px solid var(--line);
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 16px;
+}
+header a { color: var(--accent); }
+main { max-width: 1100px; margin: auto; padding: 25px; }
+.hero {
+  padding: 65px 30px;
+  background: linear-gradient(135deg,#123e59,#171e48);
+  border-radius: 22px;
+  margin-bottom: 35px;
+}
+h1 { font-size: clamp(30px,5vw,48px); line-height: 1.15; }
+h2 { color: var(--accent); margin-top: 35px; }
+h3 { color: #dbeaff; }
+p { color: var(--muted); }
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit,minmax(210px,1fr));
+  gap: 16px;
+}
+.card {
+  background: var(--card);
+  padding: 24px;
+  border-radius: 15px;
+  border: 1px solid var(--line);
+}
+.number { font-size: 34px; font-weight: bold; color: var(--accent); }
+table { width: 100%; border-collapse: collapse; }
+th,td { padding: 13px; border-bottom: 1px solid var(--line); text-align: left; }
+th { background: #1e3652; }
+.table-wrap { overflow-x: auto; }
+.bar-bg {
+  background: #27384c;
+  height: 27px;
+  border-radius: 8px;
+  overflow: hidden;
+  margin-bottom: 14px;
+}
+.bar { height: 100%; background: var(--blue); }
+.bar.equity { background: var(--accent); }
+a { color: var(--accent); }
+.button {
+  display: inline-block;
+  background: var(--accent);
+  color: #061b29;
+  padding: 12px 19px;
+  margin: 7px 8px 7px 0;
+  text-decoration: none;
+  border-radius: 9px;
+  font-weight: bold;
+}
+.note {
+  padding: 18px;
+  border-left: 4px solid #ffbb74;
+  background: #202b3c;
+  border-radius: 9px;
+}
+footer {
+  padding: 30px;
+  border-top: 1px solid var(--line);
+  text-align: center;
+  color: var(--muted);
+}
+</style>
+</head>
+
+<body>
+
+<header>
+  <strong>BUSAN TOURISM EQUITY RESEARCH</strong>
+  <nav>
+    <a href="index.html">Home</a> |
+    <a href="portal/2026-11-13_1711_KST/index.html">Research Atlas</a> |
+    <a href="portal/2026-11-13_1711_KST/professor.html">Professor Guide</a>
+  </nav>
+</header>
+
+<main>
+
+<section class="hero">
+  <p style="color:#69e5cf">RESEARCH PROGRESS — NOVEMBER 2026</p>
+  <h1>Algorithmic Visibility and Tourism Spending Inequality in Busan</h1>
+  <p>
+    An Economic-Equity-Aware Tourism Recommendation Framework
+  </p>
+  <p>
+    Can a tourism recommendation system increase visibility for
+    economically underrepresented districts while maintaining
+    relevant and geographically practical recommendations?
+  </p>
+  <a class="button" href="portal/2026-11-13_1711_KST/results.html">
+    Explore Research Findings
+  </a>
+</section>
+
+<h2>1. Research Database</h2>
+
+<div class="grid">
+  <div class="card">
+    <div class="number">768</div>
+    <p>District-month tourism observations</p>
+  </div>
+  <div class="card">
+    <div class="number">16</div>
+    <p>Busan administrative districts</p>
+  </div>
+  <div class="card">
+    <div class="number">207</div>
+    <p>Official tourist attractions</p>
+  </div>
+  <div class="card">
+    <div class="number">2022–2025</div>
+    <p>Four years of monthly tourism data</p>
+  </div>
+</div>
+
+<p>
+  Tourism data source: Korea Tourism Data Lab.
+  Attraction information: Official Busan tourism data.
+  The collected measures cover estimated foreign visitor activity
+  and recorded foreign credit-card tourism spending.
+</p>
+
+<h2>2. Research Problem</h2>
+
+<div class="card">
+  <p>
+    Foreign tourism spending is concentrated in certain Busan districts.
+    Recommendation systems may reinforce unequal visibility by
+    repeatedly prioritizing already prominent destinations.
+  </p>
+  <p>
+    This study develops and evaluates an economic-equity-aware
+    recommendation model to investigate whether suitable attractions
+    in lower-benefit districts can receive more visibility.
+  </p>
+</div>
+
+<h2>3. Tourism Spending Findings</h2>
+
+<div class="grid">
+  <div class="card">
+    <div class="number">29.89%</div>
+    <p>Haeundae's recorded foreign tourism spending share, 2022–2025</p>
+  </div>
+  <div class="card">
+    <div class="number">26.89%</div>
+    <p>Busanjin's recorded foreign tourism spending share, 2022–2025</p>
+  </div>
+  <div class="card">
+    <div class="number">56.78%</div>
+    <p>Combined spending share of these two districts</p>
+  </div>
+</div>
+
+<p>
+  These are descriptive findings. Concentrated spending does not
+  demonstrate that recommendation algorithms caused the pattern.
+</p>
+
+<h2>4. Recommendation Experiment</h2>
+
+<div class="card">
+  <h3>33 eligible tourist searches across 12 categories</h3>
+
+  <p>Normal recommendation — 56.41% exposure</p>
+  <div class="bar-bg">
+    <div class="bar" style="width:56.41%"></div>
+  </div>
+
+  <p>Equity-aware recommendation — 70.14% exposure</p>
+  <div class="bar-bg">
+    <div class="bar equity" style="width:70.14%"></div>
+  </div>
+
+  <div class="grid">
+    <div>
+      <div class="number">+13.74 pp</div>
+      <p>Increase in simulated exposure to districts with economic undercapture</p>
+    </div>
+    <div>
+      <div class="number">99.06%</div>
+      <p>Baseline text-based relevance retained</p>
+    </div>
+  </div>
+</div>
+
+<h2>5. Policy Comparison</h2>
+
+<div class="table-wrap">
+<table>
+<tr>
+  <th>Equity Strength</th>
+  <th>Undercapture Exposure</th>
+  <th>Relevance Retained</th>
+</tr>
+<tr><td>0.0 — Baseline</td><td>56.41%</td><td>100%</td></tr>
+<tr><td>0.5</td><td>65.95%</td><td>99.65%</td></tr>
+<tr><td>0.8</td><td>70.14%</td><td>99.06%</td></tr>
+<tr><td>1.0</td><td>71.53%</td><td>98.62%</td></tr>
+<tr><td>2.0</td><td>77.01%</td><td>95.68%</td></tr>
+</table>
+</div>
+
+<p>
+  Higher equity strength generally increased target-group exposure,
+  but stronger interventions could also reduce relevance or increase
+  overall exposure inequality.
+</p>
+
+<h2>6. Travel-Distance Experiment</h2>
+
+<p>
+  A preliminary experiment restricted recommendations using a
+  15-kilometer straight-line radius around different tourist starting points.
+</p>
+
+<div class="table-wrap">
+<table>
+<tr>
+  <th>Starting Point</th>
+  <th>Exposure Gain</th>
+  <th>Relevance Retained</th>
+</tr>
+<tr><td>Busan Station</td><td>+10.56 pp</td><td>99.6%</td></tr>
+<tr><td>Seomyeon Station</td><td>+11.93 pp</td><td>99.2%</td></tr>
+<tr><td>Haeundae Station</td><td>+10.64 pp</td><td>99.1%</td></tr>
+</table>
+</div>
+
+<p>
+  These are preliminary offline distance results.
+  The detailed local experiment files require separate
+  GitHub synchronization before complete public reproduction.
+</p>
+
+<div class="note">
+  <strong>Important limitation:</strong>
+  Straight-line distance is not actual travel time.
+  This experiment does not measure public transportation routes,
+  tourist satisfaction, observed visits, or changes in spending.
+</div>
+
+<h2>7. Research Progress</h2>
+
+<div class="grid">
+  <div class="card">
+    <h3>Completed</h3>
+    <p>Tourism data collection and cleaning</p>
+    <p>Statistical concentration analysis</p>
+    <p>Recommendation prototype</p>
+    <p>33-query equity experiment</p>
+    <p>Preliminary distance experiment</p>
+  </div>
+  <div class="card">
+    <h3>Still Being Improved</h3>
+    <p>Independent tourist relevance evaluation</p>
+    <p>Actual transport accessibility testing</p>
+    <p>Literature review and novelty verification</p>
+    <p>Final research manuscript and supervisor revisions</p>
+  </div>
+</div>
+
+<h2>8. Research Documents</h2>
+
+<div class="grid">
+  <div class="card">
+    <h3>Complete Research Atlas</h3>
+    <p>Research journey, findings, methods and supporting links.</p>
+    <a href="portal/2026-11-13_1711_KST/index.html">
+      Open Atlas
+    </a>
+  </div>
+
+  <div class="card">
+    <h3>Working Research Paper</h3>
+    <p>Full manuscript draft, subject to validation and revisions.</p>
+    <a href="manuscript/BUSAN_FULL_MANUSCRIPT_DRAFT_v0_2_2026-11-13.md">
+      Read Manuscript
+    </a>
+  </div>
+
+  <div class="card">
+    <h3>Research Code and Files</h3>
+    <p>GitHub repository and research documentation.</p>
+    <a href="https://github.com/Farhad762-pixel/busan-tourism-equity-66">
+      Open Repository
+    </a>
+  </div>
+</div>
+
+<h2>9. Main Research Contribution</h2>
+
+<div class="card">
+  <p>
+    The study provides an experimental framework showing how
+    district-level economic information can be used to adjust
+    tourism recommendation rankings while maintaining high
+    measured text relevance.
+  </p>
+  <p>
+    The results demonstrate simulated recommendation visibility
+    changes, not proven improvements in local economic outcomes.
+  </p>
+</div>
+
+</main>
+
+<footer>
+  Busan Tourism Equity Research | Research Progress, November 2026
+  <p>
+    Academic research prototype. Not a commercial recommender
+    or evidence of causal spending effects.
+  </p>
+</footer>
+
+</body>
+</html>
