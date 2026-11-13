@@ -19,6 +19,7 @@ This is the entry point for **research data, methods, reproducibility and profes
 | What is synced, and what is not | [Reproducibility and sync status](docs/research/REPRODUCIBILITY_STATUS.md) |
 | RQ3 results summary | [Equity policy results](experiments/equity/results/rq3_policy_summary.csv) |
 | Distance test summary | [Accessibility results](experiments/accessibility/results/accessibility_15km_summary.csv) |
+| Human relevance pilot | [Two-reviewer pilot, results and limits](docs/research/HUMAN_RELEVANCE_PILOT_2026-11-13.md) |
 
 ## Current data and results
 

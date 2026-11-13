@@ -1,0 +1,33 @@
+{
+  "n_items": 61,
+  "n_queries": 6,
+  "rated_A": 54,
+  "zero_A": 7,
+  "rated_B": 59,
+  "zero_B": 2,
+  "mean_A": 2.962962962962963,
+  "mean_B": 3,
+  "n_paired": 52,
+  "exact_pct": 34.61538461538461,
+  "within_1_pct": 78.84615384615384,
+  "mean_abs_diff": 0.9423076923076923,
+  "quadratic_kappa": 0.4900811541929666,
+  "n_fully_judged": 3,
+  "fully_judged_queries": [
+    "Korean history",
+    "night view",
+    "ocean view"
+  ],
+  "excluded_queries": [
+    "art village",
+    "local market",
+    "photography walk"
+  ],
+  "baseline_human_weighted_mean": 3.84872683499007,
+  "equity_human_weighted_mean": 3.858723533090849,
+  "human_retention": 1.002597403902479,
+  "baseline_ndcg": 0.8183765438756584,
+  "equity_ndcg": 0.8489905353714787,
+  "n_incomplete": 3,
+  "n_major_disagree": 11
+}

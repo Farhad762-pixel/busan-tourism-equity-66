@@ -1,0 +1,7 @@
+search,fully_judged,n_union,reason,baseline_weighted_mean,equity_weighted_mean,human_weighted_delta,baseline_ndcg,equity_ndcg,ndcg_delta,baseline_list_size,equity_list_size
+art village,False,12,At least one 0 (cannot judge),,,,,,,,
+Korean history,True,10,,3.7963824752907875,3.7998990192229107,0.003516543932123195,0.878982616402929,0.8825120533206527,0.0035294369177237828,10,10
+local market,False,12,At least one 0 (cannot judge),,,,,,,,
+night view,True,5,,4.046415026193937,4.061278298524303,0.01486327233036544,0.7728053823752452,0.7845608858604365,0.011755503485191277,5,5
+ocean view,True,9,,3.703383003485485,3.7149932815253335,0.011610278039848598,0.8033416328488011,0.8798986669333468,0.07655703408454573,9,9
+photography walk,False,13,At least one 0 (cannot judge),,,,,,,,

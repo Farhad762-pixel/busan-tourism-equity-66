@@ -185,8 +185,28 @@ missing benchmark or treat summary arithmetic as an independent rerun.
 - `docs/research/`: methods, evidence status, audit and synchronization plan.
 - `manuscript/README.md`: index to preserved professor reports and missing drafts.
 
-Next: recover the archive and verify permissions, reproduce all studies, obtain
-independent human relevance judgments, evaluate actual travel times, freeze a
-held-out multilingual benchmark, and verify literature citations with the
-professor. No observed revenue effect, causal intervention, commercial-platform
-audit or human-rated relevance has been established.
+Next: recover the archive and verify permissions, reproduce the full economic study,
+evaluate actual travel times, freeze a held-out multilingual benchmark, and verify
+literature citations with the professor. An exploratory two-reviewer human relevance
+pilot has now been collected; it does **not** establish representative tourist
+satisfaction or formal equivalence. No observed revenue effect, causal intervention
+or commercial-platform audit has been established.
+
+## Exploratory human relevance pilot (13 November 2026)
+
+Two people rated **61** unique query–attraction items over **six** searches, with
+**52** items rated 1–5 by both reviewers (zero means cannot judge). Exact
+agreement was **34.6%** and quadratic-weighted Cohen's κ was **0.490**.
+
+Only **three of the six searches** had complete judgments for strict baseline
+vs equity comparison. In those three, mean rank-weighted human relevance was
+**3.849/5** (baseline) and **3.859/5** (economic policy λ=0.8), a tiny,
+non-significant descriptive difference. The pilot indicates particular
+relevance weaknesses for **local market** and **photography walk** queries.
+
+[Read the methods and findings](docs/research/HUMAN_RELEVANCE_PILOT_2026-11-13.md) ·
+[Aggregate data and reproducibility notes](experiments/human_relevance/README.md)
+
+Only anonymized aggregate results and the calculation script are committed.
+Individual reviewer ratings, blind policy key and item-level workbook are
+kept private pending consent and ethics review.

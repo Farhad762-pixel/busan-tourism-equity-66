@@ -19,3 +19,9 @@ data/json/
 # Already tracked historical files remain tracked and unchanged.
 data/raw/**
 data/processed/**
+
+# Participant-level judgments and blinded policy keys (private)
+experiments/human_relevance/source/
+experiments/human_relevance/*matched*reviewer*.csv
+experiments/human_relevance/*.xlsx
+**/RESEARCHER_ONLY_POLICY_KEY.csv
