@@ -15,7 +15,7 @@ Research question: Can an economic-equity-aware attraction recommender redistrib
 
 ## Next actions, in order
 
-1. Develop a verified literature matrix using peer-reviewed tourism recommendation, popularity/exposure bias, supplier fairness, and location-aware multi-objective recommender studies. Write a bounded research gap with real DOI/citations.
+1. Expand the [preliminary verified literature matrix](../literature/INITIAL_VERIFIED_READING_MATRIX_2026-11-13.md) with full-text notes and citations. Study peer-reviewed tourism recommendation, popularity/exposure bias, supplier fairness, and location-aware multi-objective recommender studies. Write a bounded research gap with real DOI/citations.
 2. Reserve NEW evaluation queries and independent relevance judgments *before* changing algorithm rules. The six pilot queries and 48 old searches are no longer held out.
 3. Create an **intent-aware experimental v2** to address local market and photography walk mismatches; retain v1 as the frozen control. Do not claim v2 is better until evaluated.
 4. Validate original Korea Tourism Data Lab export definitions, period alignment, units, panel processing, source permissions. Rerun RQ1 and full accessibility from original inputs where possible; actual transit time remains an outstanding upgrade.
