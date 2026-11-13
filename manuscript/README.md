@@ -1,9 +1,11 @@
 # Manuscript and professor-review index
 
-No manuscript PDF/DOCX, editable article draft, or original research figures
-were found in this cloud workspace. A previously documented ZIP is said to
-contain them; that statement has not been independently verified here.
-No placeholder paper or invented references have been created.
+A recovered 2026-11-12 archive contains an earlier DOCX/PDF Methods-and-Results draft,
+a professor PDF, and research figures, but these private documents have not yet
+been safely reconciled with the current GitHub project. The new Markdown paper
+outline below is a **working research-backed scaffold**, not a fabricated final paper.
+
+Start with the [working full-paper outline](FULL_PAPER_OUTLINE_2026-11-13.md).
 
 Existing documents are preserved at their original paths:
 
@@ -16,8 +18,10 @@ Existing documents are preserved at their original paths:
 - [Reported findings and evidence labels](../docs/research/VERIFIED_RESULTS.md)
 - [Legacy literature template (empty)](../data/raw/docs/docs/docs/literature/master_literature.csv)
 
-Before drafting the final results section, recover the private panel, queries,
-original scripts and manuscript; reproduce the economic experiment; then obtain
-independent relevance judgments and route-based accessibility evidence.
+The saved RQ3 experiment was independently rerun from recovered private inputs.
+A two-reviewer human relevance pilot is complete but preliminary. Before a
+submission-quality results section, verify raw source provenance, obtain a new
+held-out human evaluation, review literature thoroughly, and validate access
+constraints or explicitly limit them to straight-line distance.
 Preserve manuscript versions separately and record which dataset/code commit
 each draft used. Verify every scholarly citation against its original paper.
