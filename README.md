@@ -221,3 +221,7 @@ The 48 fixed searches are a **development benchmark**, not held-out evidence.
 [Reproduction record](docs/research/RQ3_REPRODUCTION_2026-11-13.md) ·
 [Run script](experiments/equity/reproduce_rq3.py) ·
 [Full paper roadmap](docs/research/PAPER_ROADMAP_2026-11-13.md).
+
+## New manuscript draft — 13 November 2026
+
+[Read the full Introduction and Related Work draft](manuscript/INTRODUCTION_AND_RELATED_WORK_2026-11-13.md) with a checked bibliography and a cautious research-gap synthesis. The research gap remains **provisional**, and the official visitor-count estimates are **not deduplicated district residents or unique tourists**.

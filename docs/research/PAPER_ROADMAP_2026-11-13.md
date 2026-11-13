@@ -10,8 +10,8 @@ Research question: Can an economic-equity-aware attraction recommender redistrib
 | RQ2 + RQ3 offline rankings | **33-query, five-policy RQ3 numerical rerun successful on 2026-11-13**; first 48 queries are development data |
 | Accessibility | Archived Haversine-distance sensitivity only; neither routes nor actual travel times verified |
 | Human evaluation | **Exploratory two-person, six-query pilot completed**; no population-level conclusions |
-| Literature gap and novelty proof | **Not yet supported by a complete verified scholarly review** |
-| Manuscript | Archived Methods and Results drafts exist privately; complete Introduction, Literature, Discussion, Conclusion, references and professor revisions still needed |
+| Literature gap and novelty proof | **Introduction and literature draft written 2026-11-13**, 10 relevant articles reviewed from publisher/conference material; exhaustive review and novelty still unproven |
+| Manuscript | **Introduction and Related Work working draft now written**. Archived Methods and Results drafts exist privately; integrated Discussion, Conclusion, references and professor revisions still needed |
 
 ## Next actions, in order
 
@@ -26,3 +26,5 @@ Research question: Can an economic-equity-aware attraction recommender redistrib
 The study has enough methods and initial results to **start drafting a full paper now**. It is **not** ready for journal submission because the novelty literature matrix, independent test, stronger human validation, rights/provenance checks and manuscript revision are outstanding. A planning estimate for a professor-reviewable first draft is roughly 3–6 focused weeks, assuming inputs remain accessible; publication-grade revisions may take several additional months.
 
 Remember: 13.74 percentage points is a simulated ranking exposure gain, NOT a revenue gain. The 99.06% metric is TF-IDF similarity retention, NOT 99.06% human satisfaction. The current FastAPI endpoint is still an older attraction-count proxy, not this economic policy.
+
+**New writing milestone:** [Full Introduction and Related Work draft](../../manuscript/INTRODUCTION_AND_RELATED_WORK_2026-11-13.md) · [Targeted source verification](../literature/TARGETED_SEARCH_LOG_2026-11-13.md). The working gap statement remains provisional; no new experimental validation was performed by drafting these sections.

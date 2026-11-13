@@ -42,3 +42,9 @@ This is a **public GitHub repository**. The complete JSON database, original Kor
 The previously committed `src/api/main.py` may not match newer uncommitted changes on the researcher's Mac. **Do not overwrite the Mac's latest API with an archived checkpoint.**
 
 **Status:** Existing summary documents are on main. The reproducibility audit is on a separate review branch; full archive synchronization remains a follow-up task.
+
+## Manuscript writing update (13 November 2026)
+
+[Introduction and Related Work working draft](manuscript/INTRODUCTION_AND_RELATED_WORK_2026-11-13.md) · [Verified literature screening notes](docs/literature/TARGETED_SEARCH_LOG_2026-11-13.md).
+
+The draft explains the narrow economic-proxy contribution and the visitor-estimation limits. It is not a final journal submission.
