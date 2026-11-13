@@ -1,5 +1,35 @@
 # Synchronization and reproducibility status
 
+## Cloud audit: 2026-11-13
+
+Latest GitHub main inspected: `fd117b8`. The cloud checkout initially lagged at
+`2782375`; API and requirements were identical. Work began on a separate review
+branch from current main after a local Git bundle and working-tree backup.
+Mac project and Downloads are not accessible. No archive was found here.
+
+| Evidence | Current status |
+|---|---|
+| Existing 207-attraction data | Validated against full raw JSON; data untouched |
+| Five API endpoints and Swagger | Covered by automated checks and browser smoke test |
+| Existing summary table arithmetic | Checked; saved Gini/HHI and gains agree |
+| Full RQ1 / RQ2 / RQ3 reproduction | Blocked: panel, combined JSON, benchmark and scripts absent |
+| Accessibility calculation/eligibility | Blocked: original code, origin coordinates and detailed tables absent |
+| Mac-only application comparison | Blocked: files unavailable; no older code substituted |
+| Source-data release review | New source files excluded; historical permissions remain a follow-up |
+
+See [audit](AUDIT_2026-11-13.md), [reproduction guide](REPRODUCE.md),
+[data dictionary](../data_sources/DATA_DICTIONARY.md) and
+[manuscript index](../../manuscript/README.md).
+
+## Historical archive report (not independently verified in this checkout)
+
+The following previous checkpoint description is retained for reference. In
+particular, its statements about a ZIP and an offline rerun are historical
+reports, not results of the current audit. Do not infer that the ZIP or those
+scripts are now included in GitHub.
+
+### Earlier synchronization report
+
 This public repository was inspected on 2026-11-12 before the organization update. Existing code, already uploaded raw attraction files, README, and older experiment summaries were **left unchanged**. This update adds a clearly labeled research index and *small, derived* result summaries.
 
 ## Research materials available in the local prepared ZIP

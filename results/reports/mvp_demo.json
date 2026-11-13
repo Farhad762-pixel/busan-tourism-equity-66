@@ -1,0 +1,152 @@
+{
+  "experiment": "single_query_attraction_distribution_prototype",
+  "software": {
+    "python": "3.12.14",
+    "fastapi": "0.141.1",
+    "scikit-learn": "1.8.0",
+    "numpy": "2.3.5",
+    "scipy": "1.17.0",
+    "pydantic": "2.13.4"
+  },
+  "query": "sea cafe photography",
+  "limit": 10,
+  "equity_weight": 0.2,
+  "data_sha256": "79f8cc89aaac21c3fb86729c3e388c5f7b1cbc148c08f437684a734db0b969f3",
+  "text_fields": [
+    "main_title",
+    "subtitle",
+    "place",
+    "district",
+    "address",
+    "transport_info"
+  ],
+  "baseline": [
+    {
+      "id": 2140,
+      "district": "Yeongdo-gu",
+      "relevance_score": 0.24285121686431543
+    },
+    {
+      "id": 2187,
+      "district": "Jung-gu",
+      "relevance_score": 0.1402072522711433
+    },
+    {
+      "id": 2188,
+      "district": "Nam-gu",
+      "relevance_score": 0.13466632136699516
+    },
+    {
+      "id": 2220,
+      "district": "Gijang-gun",
+      "relevance_score": 0.12158705252152563
+    },
+    {
+      "id": 285,
+      "district": "Suyeong-gu",
+      "relevance_score": 0.11697996939687248
+    },
+    {
+      "id": 377,
+      "district": "Suyeong-gu",
+      "relevance_score": 0.11065135512482739
+    },
+    {
+      "id": 2189,
+      "district": "Gangseo-gu",
+      "relevance_score": 0.10048634843799688
+    },
+    {
+      "id": 2186,
+      "district": "Gijang-gun",
+      "relevance_score": 0.08722193732060021
+    },
+    {
+      "id": 304,
+      "district": "Saha-gu",
+      "relevance_score": 0.06423766555450068
+    },
+    {
+      "id": 255,
+      "district": "Yeongdo-gu",
+      "relevance_score": 0.0
+    }
+  ],
+  "equity_aware": [
+    {
+      "id": 2140,
+      "district": "Yeongdo-gu",
+      "relevance_score": 0.24285121686431543,
+      "equity_score": 0.42857142857142855,
+      "final_score": 0.2799952592057381,
+      "equity_measure": "prototype_attraction_distribution_proxy"
+    },
+    {
+      "id": 285,
+      "district": "Suyeong-gu",
+      "relevance_score": 0.11697996939687248,
+      "equity_score": 0.6190476190476191,
+      "final_score": 0.2173934993270218,
+      "equity_measure": "prototype_attraction_distribution_proxy"
+    },
+    {
+      "id": 377,
+      "district": "Suyeong-gu",
+      "relevance_score": 0.11065135512482739,
+      "equity_score": 0.6190476190476191,
+      "final_score": 0.21233060790938574,
+      "equity_measure": "prototype_attraction_distribution_proxy"
+    },
+    {
+      "id": 2189,
+      "district": "Gangseo-gu",
+      "relevance_score": 0.10048634843799688,
+      "equity_score": 0.6190476190476191,
+      "final_score": 0.20419860255992134,
+      "equity_measure": "prototype_attraction_distribution_proxy"
+    },
+    {
+      "id": 2188,
+      "district": "Nam-gu",
+      "relevance_score": 0.13466632136699516,
+      "equity_score": 0.3333333333333333,
+      "final_score": 0.1743997237602628,
+      "equity_measure": "prototype_attraction_distribution_proxy"
+    },
+    {
+      "id": 304,
+      "district": "Saha-gu",
+      "relevance_score": 0.06423766555450068,
+      "equity_score": 0.5238095238095238,
+      "final_score": 0.15615203720550533,
+      "equity_measure": "prototype_attraction_distribution_proxy"
+    },
+    {
+      "id": 2187,
+      "district": "Jung-gu",
+      "relevance_score": 0.1402072522711433,
+      "equity_score": 0.0,
+      "final_score": 0.11216580181691466,
+      "equity_measure": "prototype_attraction_distribution_proxy"
+    },
+    {
+      "id": 2220,
+      "district": "Gijang-gun",
+      "relevance_score": 0.12158705252152563,
+      "equity_score": 0.0,
+      "final_score": 0.0972696420172205,
+      "equity_measure": "prototype_attraction_distribution_proxy"
+    },
+    {
+      "id": 2186,
+      "district": "Gijang-gun",
+      "relevance_score": 0.08722193732060021,
+      "equity_score": 0.0,
+      "final_score": 0.06977754985648017,
+      "equity_measure": "prototype_attraction_distribution_proxy"
+    }
+  ],
+  "baseline_unique_districts": 7,
+  "equity_aware_unique_districts": 7,
+  "limitation": "Not the 33-query economic-undercapture study; no measured spending or travel effect"
+}

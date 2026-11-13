@@ -1,0 +1,327 @@
+{
+  "schema_version": 1,
+  "duplicate_file_groups": [
+    [
+      "data/raw/.gitkeep",
+      "data/raw/tourism_spending/haeundae/.gitkeep"
+    ],
+    [
+      "data/raw/foreign_spending_raw.csv",
+      "data/raw/foreign_visitors_raw.csv"
+    ]
+  ],
+  "attractions": {
+    "status": "pass",
+    "rows": 207,
+    "district_counts": {
+      "Buk-gu": 9,
+      "Busanjin-gu": 19,
+      "Dong-gu": 17,
+      "Dongnae-gu": 10,
+      "Gangseo-gu": 9,
+      "Geumjeong-gu": 13,
+      "Gijang-gun": 22,
+      "Haeundae-gu": 16,
+      "Jung-gu": 22,
+      "Nam-gu": 15,
+      "Saha-gu": 11,
+      "Sasang-gu": 5,
+      "Seo-gu": 16,
+      "Suyeong-gu": 9,
+      "Yeongdo-gu": 13,
+      "Yeonje-gu": 1
+    },
+    "errors": [],
+    "csv_json_consistency": "exact field projection including row order"
+  },
+  "historical_exports": [
+    {
+      "path": "data/raw/tourism_spending/haeundae/haeundae_foreign_spending_by_country_2022.csv",
+      "rows": 34,
+      "unique_regions": [],
+      "checked_numeric_fields": [
+        "소비 비율"
+      ],
+      "duplicate_keys": 0,
+      "errors": [],
+      "provenance_status": "unverified_export_filters_and_redistribution_terms"
+    },
+    {
+      "path": "data/raw/tourism_spending/haeundae/haeundae_foreign_spending_by_country_2023.csv",
+      "rows": 33,
+      "unique_regions": [],
+      "checked_numeric_fields": [
+        "소비 비율"
+      ],
+      "duplicate_keys": 0,
+      "errors": [],
+      "provenance_status": "unverified_export_filters_and_redistribution_terms"
+    },
+    {
+      "path": "data/raw/tourism_spending/haeundae/haeundae_foreign_spending_by_country_2024.csv",
+      "rows": 33,
+      "unique_regions": [],
+      "checked_numeric_fields": [
+        "소비 비율"
+      ],
+      "duplicate_keys": 0,
+      "errors": [],
+      "provenance_status": "unverified_export_filters_and_redistribution_terms"
+    },
+    {
+      "path": "data/raw/tourism_spending/haeundae/haeundae_foreign_spending_by_country_2025.csv",
+      "rows": 33,
+      "unique_regions": [],
+      "checked_numeric_fields": [
+        "소비 비율"
+      ],
+      "duplicate_keys": 0,
+      "errors": [],
+      "provenance_status": "unverified_export_filters_and_redistribution_terms"
+    },
+    {
+      "path": "data/raw/tourism_spending/haeundae/haeundae_foreign_spending_by_industry_2022.csv",
+      "rows": 94,
+      "unique_regions": [],
+      "checked_numeric_fields": [
+        "소비액(천원)"
+      ],
+      "duplicate_keys": 0,
+      "errors": [],
+      "provenance_status": "unverified_export_filters_and_redistribution_terms"
+    },
+    {
+      "path": "data/raw/tourism_spending/haeundae/haeundae_foreign_spending_by_industry_2023.csv",
+      "rows": 95,
+      "unique_regions": [],
+      "checked_numeric_fields": [
+        "소비액(천원)"
+      ],
+      "duplicate_keys": 0,
+      "errors": [],
+      "provenance_status": "unverified_export_filters_and_redistribution_terms"
+    },
+    {
+      "path": "data/raw/tourism_spending/haeundae/haeundae_foreign_spending_by_industry_2024.csv",
+      "rows": 96,
+      "unique_regions": [],
+      "checked_numeric_fields": [
+        "소비액(천원)"
+      ],
+      "duplicate_keys": 0,
+      "errors": [],
+      "provenance_status": "unverified_export_filters_and_redistribution_terms"
+    },
+    {
+      "path": "data/raw/tourism_spending/haeundae/haeundae_foreign_spending_by_industry_2025.csv",
+      "rows": 96,
+      "unique_regions": [],
+      "checked_numeric_fields": [
+        "소비액(천원)"
+      ],
+      "duplicate_keys": 0,
+      "errors": [],
+      "provenance_status": "unverified_export_filters_and_redistribution_terms"
+    },
+    {
+      "path": "data/raw/tourism_spending/haeundae/haeundae_foreign_spending_types_2022.csv",
+      "rows": 19,
+      "unique_regions": [],
+      "checked_numeric_fields": [
+        "카테고리 대분류 소비 비율",
+        "카테고리 중분류 소비 비율"
+      ],
+      "duplicate_keys": 0,
+      "errors": [],
+      "provenance_status": "unverified_export_filters_and_redistribution_terms"
+    },
+    {
+      "path": "data/raw/tourism_spending/haeundae/haeundae_foreign_spending_types_2023.csv",
+      "rows": 19,
+      "unique_regions": [],
+      "checked_numeric_fields": [
+        "카테고리 대분류 소비 비율",
+        "카테고리 중분류 소비 비율"
+      ],
+      "duplicate_keys": 0,
+      "errors": [],
+      "provenance_status": "unverified_export_filters_and_redistribution_terms"
+    },
+    {
+      "path": "data/raw/tourism_spending/haeundae/haeundae_foreign_spending_types_2024.csv",
+      "rows": 19,
+      "unique_regions": [],
+      "checked_numeric_fields": [
+        "카테고리 대분류 소비 비율",
+        "카테고리 중분류 소비 비율"
+      ],
+      "duplicate_keys": 0,
+      "errors": [],
+      "provenance_status": "unverified_export_filters_and_redistribution_terms"
+    },
+    {
+      "path": "data/raw/tourism_spending/haeundae/haeundae_foreign_spending_types_2025.csv",
+      "rows": 19,
+      "unique_regions": [],
+      "checked_numeric_fields": [
+        "카테고리 대분류 소비 비율",
+        "카테고리 중분류 소비 비율"
+      ],
+      "duplicate_keys": 0,
+      "errors": [],
+      "provenance_status": "unverified_export_filters_and_redistribution_terms"
+    },
+    {
+      "path": "data/raw/tourism_spending/haeundae/haeundae_total_foreign_spending_2022.csv",
+      "rows": 12,
+      "unique_regions": [
+        "부산광역시 해운대구"
+      ],
+      "checked_numeric_fields": [
+        "지역 관광소비액(백만원)"
+      ],
+      "duplicate_keys": 0,
+      "errors": [],
+      "provenance_status": "unverified_export_filters_and_redistribution_terms"
+    },
+    {
+      "path": "data/raw/tourism_spending/haeundae/haeundae_total_foreign_spending_2023.csv",
+      "rows": 12,
+      "unique_regions": [
+        "부산광역시 해운대구"
+      ],
+      "checked_numeric_fields": [
+        "지역 관광소비액(백만원)"
+      ],
+      "duplicate_keys": 0,
+      "errors": [],
+      "provenance_status": "unverified_export_filters_and_redistribution_terms"
+    },
+    {
+      "path": "data/raw/tourism_spending/haeundae/haeundae_total_foreign_spending_2024.csv",
+      "rows": 12,
+      "unique_regions": [
+        "부산광역시 해운대구"
+      ],
+      "checked_numeric_fields": [
+        "지역 관광소비액(백만원)"
+      ],
+      "duplicate_keys": 0,
+      "errors": [],
+      "provenance_status": "unverified_export_filters_and_redistribution_terms"
+    },
+    {
+      "path": "data/raw/tourism_spending/haeundae/haeundae_total_foreign_spending_2025.csv",
+      "rows": 12,
+      "unique_regions": [
+        "부산광역시 해운대구"
+      ],
+      "checked_numeric_fields": [
+        "지역 관광소비액(백만원)"
+      ],
+      "duplicate_keys": 0,
+      "errors": [],
+      "provenance_status": "unverified_export_filters_and_redistribution_terms"
+    },
+    {
+      "path": "data/raw/foreign_visitors_raw.csv",
+      "rows": 12,
+      "unique_regions": [
+        "부산광역시"
+      ],
+      "checked_numeric_fields": [
+        "방문자 수"
+      ],
+      "duplicate_keys": 0,
+      "errors": [],
+      "provenance_status": "unverified_export_filters_and_redistribution_terms"
+    },
+    {
+      "path": "data/raw/foreign_spending_raw.csv",
+      "rows": 12,
+      "unique_regions": [
+        "부산광역시"
+      ],
+      "checked_numeric_fields": [
+        "방문자 수"
+      ],
+      "duplicate_keys": 0,
+      "errors": [],
+      "provenance_status": "unverified_export_filters_and_redistribution_terms"
+    }
+  ],
+  "mislabeled_spending_equals_visitors": true,
+  "research_reproduction": {
+    "status": "blocked_missing_inputs",
+    "missing": [
+      "768-row district-month panel",
+      "combined research JSON",
+      "48 benchmark queries and categories",
+      "archived economic and accessibility scripts",
+      "station coordinates and detailed policies",
+      "manuscript and figures"
+    ]
+  },
+  "saved_summaries": {
+    "status": "summary_arithmetic_only_not_experiment_reproduction",
+    "policy_checks": [
+      {
+        "policy_lambda": 0.0,
+        "gain_arithmetic_matches": true,
+        "retention_arithmetic_matches": true
+      },
+      {
+        "policy_lambda": 0.5,
+        "gain_arithmetic_matches": true,
+        "retention_arithmetic_matches": true
+      },
+      {
+        "policy_lambda": 0.8,
+        "gain_arithmetic_matches": true,
+        "retention_arithmetic_matches": true
+      },
+      {
+        "policy_lambda": 1.0,
+        "gain_arithmetic_matches": true,
+        "retention_arithmetic_matches": true
+      },
+      {
+        "policy_lambda": 2.0,
+        "gain_arithmetic_matches": true,
+        "retention_arithmetic_matches": true
+      }
+    ],
+    "exposure_table_metrics": {
+      "Baseline": {
+        "share_sum": 1.0,
+        "gini": 0.3263426449266155,
+        "hhi": 0.08337225211426424,
+        "district_coverage": 15
+      },
+      "Equity": {
+        "share_sum": 1.0000000000000002,
+        "gini": 0.29825565863800574,
+        "hhi": 0.08009801623101104,
+        "district_coverage": 15
+      }
+    },
+    "exposure_table_matches_lambda_0_8_gini": true,
+    "accessibility_checks": [
+      {
+        "origin": "Busan Station",
+        "same_query_count": true,
+        "gain_pp": 10.559502682162481
+      },
+      {
+        "origin": "Haeundae Station",
+        "same_query_count": true,
+        "gain_pp": 10.635466341512362
+      },
+      {
+        "origin": "Seomyeon Station",
+        "same_query_count": true,
+        "gain_pp": 11.932175594011907
+      }
+    ]
+  }
+}

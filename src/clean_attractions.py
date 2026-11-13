@@ -1,6 +1,7 @@
 """Export attraction fields to UTF-8 CSV without changing the raw JSON."""
 
 import csv
+import argparse
 import json
 from pathlib import Path
 
@@ -26,8 +27,9 @@ FIELDS = {
 }
 
 
-def main():
-    records = json.loads(SOURCE.read_text(encoding="utf-8-sig"))["getAttractionEn"]["item"]
+def export_attractions(source: Path, destination: Path):
+    """Write a new file only; callers must explicitly choose a fresh destination."""
+    records = json.loads(source.read_text(encoding="utf-8-sig"))["getAttractionEn"]["item"]
     seen = set()
     rows = []
     for record in records:
@@ -38,13 +40,25 @@ def main():
         seen.add(key)
         rows.append({target: record.get(source, "") for source, target in FIELDS.items()})
 
-    DESTINATION.parent.mkdir(parents=True, exist_ok=True)
-    with DESTINATION.open("w", encoding="utf-8", newline="") as handle:
+    destination.parent.mkdir(parents=True, exist_ok=True)
+    with destination.open("x", encoding="utf-8", newline="") as handle:
         writer = csv.DictWriter(handle, fieldnames=list(FIELDS.values()))
         writer.writeheader()
         writer.writerows(rows)
-    print(f"Wrote {len(rows)} rows and {len(FIELDS)} columns to {DESTINATION}")
+    print(f"Wrote {len(rows)} rows and {len(FIELDS)} columns to {destination}")
     print(f"Removed {len(records) - len(rows)} exact duplicate records")
+
+
+def main():
+    parser = argparse.ArgumentParser(description=__doc__)
+    parser.add_argument("--source", type=Path, default=SOURCE)
+    parser.add_argument("--output", type=Path, default=DESTINATION,
+                        help="A new file; existing datasets are never overwritten")
+    args = parser.parse_args()
+    try:
+        export_attractions(args.source, args.output)
+    except (FileExistsError, FileNotFoundError, KeyError, json.JSONDecodeError) as error:
+        parser.exit(1, f"Export failed: {error}. Choose an existing source and a fresh --output path.\n")
 
 
 if __name__ == "__main__":

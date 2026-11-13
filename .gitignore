@@ -1,0 +1,21 @@
+__pycache__/
+*.py[cod]
+.venv/
+.DS_Store
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+work/
+backups/
+data/private/
+data/json/
+*.zip
+*.tar.gz
+*.bundle
+
+# Require deliberate review before publishing any new source data or panels.
+# Already tracked historical files remain tracked and unchanged.
+data/raw/**
+data/processed/**

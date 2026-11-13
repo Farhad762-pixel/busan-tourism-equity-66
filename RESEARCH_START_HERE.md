@@ -1,3 +1,5 @@
+> **Current audit:** [2026-11-13 inventory and evidence limits](docs/research/AUDIT_2026-11-13.md). The referenced Mac archive is not accessible in this cloud checkout. Summary arithmetic checks are not full experiment reproduction.
+
 # Busan Tourism Equity — Research Library
 
 This is the entry point for **research data, methods, reproducibility and professor-facing findings**. The repository's original application and previously committed files remain in their existing locations.
@@ -12,7 +14,7 @@ This is the entry point for **research data, methods, reproducibility and profes
 | --- | --- |
 | Current research status | [Research roadmap](docs/research/NEXT_STEPS.md) |
 | Research methods and definitions | [Methods](docs/research/METHODS_AND_METRICS.md) |
-| Verified numerical findings | [Results](docs/research/VERIFIED_RESULTS.md) |
+| Previously reported numerical findings | [Results](docs/research/VERIFIED_RESULTS.md) |
 | Data sources and reuse checks | [Sources & reuse](docs/research/SOURCES_AND_REUSE.md) |
 | What is synced, and what is not | [Reproducibility and sync status](docs/research/REPRODUCIBILITY_STATUS.md) |
 | RQ3 results summary | [Equity policy results](experiments/equity/results/rq3_policy_summary.csv) |
@@ -36,4 +38,4 @@ This is a **public GitHub repository**. The complete JSON database, original Kor
 
 The previously committed `src/api/main.py` may not match newer uncommitted changes on the researcher's Mac. **Do not overwrite the Mac's latest API with an archived checkpoint.**
 
-**Status:** Research documents and summary tables are staged for review in a separate GitHub branch; full archive synchronization remains a follow-up task.
+**Status:** Existing summary documents are on main. The reproducibility audit is on a separate review branch; full archive synchronization remains a follow-up task.

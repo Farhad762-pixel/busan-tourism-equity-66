@@ -1,6 +1,8 @@
-# Verified research findings (snapshot: November 2026)
+> **Evidence update (2026-11-13):** This document preserves previously reported research. The cloud audit checked available attraction data, API behavior and summary arithmetic; it did not rerun the economic or accessibility studies because their inputs/scripts are missing. See [audit](AUDIT_2026-11-13.md).
 
-This page summarizes computations from the saved research checkpoint and separately rerun offline experiment. Values are **simulated recommendation measurements**, not measured downstream tourist behavior.
+# Previously reported research findings (snapshot: November 2026)
+
+This page preserves findings from the saved research checkpoint, including an earlier report of an offline rerun. The current cloud audit independently checked summary arithmetic only; the original inputs and scripts are unavailable here. Values are **simulated recommendation measurements**, not measured downstream tourist behavior.
 
 ## Data quality and scope
 
