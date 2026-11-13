@@ -1,0 +1,23 @@
+name: Research history — append-only preservation
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+permissions:
+  contents: read
+
+jobs:
+  verify-history:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out full history
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - name: Ensure original files unchanged and no previously tracked file rewritten
+        env:
+          BASE_SHA: ${{ github.event.pull_request.base.sha || github.event.before }}
+        run: python scripts/verify_append_only_baseline_2026-11-13_1658_KST.py --base "$BASE_SHA"
