@@ -15,7 +15,9 @@ Data Lab measurement cautions. It is **not** a final literature review or
 journal-ready manuscript. Integrate and reconcile the saved Methods/Results
 drafts, collect an independent held-out study, and obtain professor feedback.
 
-Start with the [working full-paper outline](FULL_PAPER_OUTLINE_2026-11-13.md).
+**Start here: [Full integrated manuscript working draft v0.2](BUSAN_FULL_MANUSCRIPT_DRAFT_v0_2_2026-11-13.md).** This document now contains Abstract, Introduction, Related Work, Data/Methods, Results, Discussion, Limitations, Conclusion, references and a professor checklist. It is *not* journal-submission-ready.
+
+Also see the [original paper outline](FULL_PAPER_OUTLINE_2026-11-13.md).
 
 Existing documents are preserved at their original paths:
 
