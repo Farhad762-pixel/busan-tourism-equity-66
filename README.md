@@ -168,8 +168,8 @@ The validator is read-only. To rebuild the attraction projection safely, use
 `python src/clean_attractions.py --output work/attractions_rebuilt.csv` with a
 fresh filename. Existing outputs are never overwritten.
 
-The full economic experiment is blocked until private inputs and original
-scripts are recovered. Follow the [reproduction guide](docs/research/REPRODUCE.md)
+An offline RQ3 rerun was successful from recovered private archive inputs on
+2026-11-13. The public script still needs private economic scores to rerun. Follow the [reproduction guide](docs/research/REPRODUCE.md)
 and [sync status](docs/research/REPRODUCIBILITY_STATUS.md); do not manufacture the
 missing benchmark or treat summary arithmetic as an independent rerun.
 
@@ -185,7 +185,7 @@ missing benchmark or treat summary arithmetic as an independent rerun.
 - `docs/research/`: methods, evidence status, audit and synchronization plan.
 - `manuscript/README.md`: index to preserved professor reports and missing drafts.
 
-Next: recover the archive and verify permissions, reproduce the full economic study,
+Next: verify private archive provenance and permissions, extend robustness checks,
 evaluate actual travel times, freeze a held-out multilingual benchmark, and verify
 literature citations with the professor. An exploratory two-reviewer human relevance
 pilot has now been collected; it does **not** establish representative tourist
@@ -210,3 +210,14 @@ relevance weaknesses for **local market** and **photography walk** queries.
 Only anonymized aggregate results and the calculation script are committed.
 Individual reviewer ratings, blind policy key and item-level workbook are
 kept private pending consent and ethics review.
+
+## Reproducible RQ3 milestone (13 November 2026)
+
+The saved 33-query, five-policy **economic** reranking experiment was rerun
+from the recovered private archive and matched the archived summary results.
+The public code does not expose underlying district spending or visitor data.
+The 48 fixed searches are a **development benchmark**, not held-out evidence.
+
+[Reproduction record](docs/research/RQ3_REPRODUCTION_2026-11-13.md) ·
+[Run script](experiments/equity/reproduce_rq3.py) ·
+[Full paper roadmap](docs/research/PAPER_ROADMAP_2026-11-13.md).

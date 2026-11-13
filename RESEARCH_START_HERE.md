@@ -20,6 +20,8 @@ This is the entry point for **research data, methods, reproducibility and profes
 | RQ3 results summary | [Equity policy results](experiments/equity/results/rq3_policy_summary.csv) |
 | Distance test summary | [Accessibility results](experiments/accessibility/results/accessibility_15km_summary.csv) |
 | Human relevance pilot | [Two-reviewer pilot, results and limits](docs/research/HUMAN_RELEVANCE_PILOT_2026-11-13.md) |
+| Verified RQ3 rerun | [Reproduction evidence and private-input procedure](docs/research/RQ3_REPRODUCTION_2026-11-13.md) |
+| Paper completion roadmap | [Status and next priorities](docs/research/PAPER_ROADMAP_2026-11-13.md) |
 
 ## Current data and results
 

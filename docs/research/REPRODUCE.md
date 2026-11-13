@@ -66,3 +66,18 @@ If redistribution is restricted, run the recovered scripts locally against
 ignored `data/private/` inputs and publish only permitted aggregate results,
 schema/loading instructions and their checksums. Do not invent input mappings
 or scrape missing observations to make reported values match.
+
+## Recovered RQ3 experiment (13 November 2026)
+
+The archived 33-query economic model was independently rerun using recovered
+private data. Its public script and original authored development-query labels
+are available in the repository. Reproduce locally after placing the private
+2024-2025 district signal file at data/private/teos_primary_2024_2025.csv:
+
+    python experiments/equity/reproduce_rq3.py
+
+The script checks all five archived policy rows and writes a CSV and input
+hashes to ignored work/rq3_reproduced/. Private signals need district,
+economic_undercapture, recommendation_candidate for all 16 districts.
+Do not upload private inputs or reuse these development queries as an
+independent post-improvement benchmark.

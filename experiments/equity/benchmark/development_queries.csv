@@ -1,0 +1,49 @@
+query_id,category,query,valid_for_main_audit
+1,sea_beach,beautiful beach,True
+2,sea_beach,ocean view,True
+3,sea_beach,sea scenery,False
+4,sea_beach,coastal attraction,False
+5,nature,forest nature,True
+6,nature,beautiful park,True
+7,nature,nature walking,True
+8,nature,green outdoor scenery,False
+9,culture_history,Korean history,True
+10,culture_history,traditional culture,True
+11,culture_history,historic place,True
+12,culture_history,cultural heritage,True
+13,art_village,art village,True
+14,art_village,creative arts,True
+15,art_village,colorful cultural village,True
+16,art_village,local art,True
+17,family,family attraction,False
+18,family,children family trip,True
+19,family,fun family activity,False
+20,family,family sightseeing,False
+21,romantic_view,romantic sea view,True
+22,romantic_view,beautiful sunset,False
+23,romantic_view,scenic date,False
+24,romantic_view,ocean photography,True
+25,food_market,local market,True
+26,food_market,traditional market,True
+27,food_market,food market,True
+28,food_market,local food experience,True
+29,religion_spiritual,temple nature,True
+30,religion_spiritual,historic temple,True
+31,religion_spiritual,peaceful temple,True
+32,religion_spiritual,spiritual place,True
+33,museum_learning,museum,True
+34,museum_learning,history museum,True
+35,museum_learning,educational attraction,False
+36,museum_learning,maritime museum,True
+37,cafe_relaxation,cafe tour,True
+38,cafe_relaxation,relaxing cafe,False
+39,cafe_relaxation,cafe with view,False
+40,cafe_relaxation,leisurely cafe,False
+41,city_night,night view,True
+42,city_night,city lights,True
+43,city_night,night sightseeing,False
+44,city_night,evening scenery,False
+45,walking_photography,photography walk,True
+46,walking_photography,scenic walking,False
+47,walking_photography,beautiful village photography,True
+48,walking_photography,walking trail,True
